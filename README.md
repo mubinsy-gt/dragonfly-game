@@ -6,6 +6,23 @@ sehingga dapat dibuka, dijalankan, dan diedit melalui editor Godot.
 
 ---
 
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Main Menu
+![Main Menu](screenshots/menu.jpeg)
+
+### 🐉 Dragon Selection
+![Dragon Selection](screenshots/ChangeDragon.jpeg)
+
+### 🎮 Gameplay
+![Gameplay](screenshots/gameplay.jpeg)
+
+---
+
+
 ## 1. Versi Godot
 
 - **Godot Engine 4.7.2** (stable)
