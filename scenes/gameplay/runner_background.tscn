@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/runner_background.gd" id="1_bg"]
+
+[node name="RunnerBackground" type="Node2D"]
+script = ExtResource("1_bg")
+
+[node name="Sky" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_right = 640.0
+offset_bottom = 360.0
+stretch_mode = 1
+
+[node name="Far" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_top = 168.0
+offset_right = 704.0
+offset_bottom = 232.0
+stretch_mode = 1
+
+[node name="Mid" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_top = 228.0
+offset_right = 704.0
+offset_bottom = 292.0
+stretch_mode = 1
+
+[node name="Ground" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_top = 296.0
+offset_right = 704.0
+offset_bottom = 360.0
+stretch_mode = 1
+
+[node name="Overlay" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_right = 704.0
+offset_bottom = 64.0
+stretch_mode = 1

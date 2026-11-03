@@ -1,0 +1,197 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_mm"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/runner_background.tscn" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/deco_bird.png" id="3_bird"]
+[ext_resource type="Theme" path="res://resources/config/ui_theme.tres" id="4_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_logo_wordmark.png" id="5_logo"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_frame_obsidian.png" id="7_frame"]
+[ext_resource type="Texture2D" path="res://assets/items/item_coin.png" id="8_coin"]
+[ext_resource type="Texture2D" path="res://assets/items/item_gem.png" id="9_gem"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_play.png" id="10_play"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_gear.png" id="11_gear"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_exit.png" id="12_exit"]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_mm")
+theme = ExtResource("4_theme")
+
+[node name="Background" parent="." instance=ExtResource("2_bg")]
+
+[node name="Birds" type="Node2D" parent="."]
+
+[node name="Bird1" type="Sprite2D" parent="Birds"]
+position = Vector2(200, 60)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_bird")
+
+[node name="Bird2" type="Sprite2D" parent="Birds"]
+position = Vector2(430, 100)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_bird")
+
+[node name="Bird3" type="Sprite2D" parent="Birds"]
+position = Vector2(600, 40)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bird")
+
+[node name="DragonHolder" type="Node2D" parent="."]
+position = Vector2(470, 150)
+
+[node name="LogoImage" type="TextureRect" parent="."]
+offset_left = 170.0
+offset_top = 4.0
+offset_right = 470.0
+offset_bottom = 98.0
+mouse_filter = 2
+texture = ExtResource("5_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Currency" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -162.0
+offset_right = -8.0
+offset_bottom = 80.0
+mouse_filter = 2
+
+[node name="CurrencyPanel" type="NinePatchRect" parent="Currency"]
+offset_top = 6.0
+offset_right = 154.0
+offset_bottom = 96.0
+mouse_filter = 2
+texture = ExtResource("7_frame")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="CoinIcon" type="TextureRect" parent="Currency"]
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("8_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="Currency"]
+offset_left = 34.0
+offset_top = 12.0
+offset_right = 146.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GemIcon" type="TextureRect" parent="Currency"]
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 30.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("9_gem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GemsLabel" type="Label" parent="Currency"]
+offset_left = 34.0
+offset_top = 38.0
+offset_right = 146.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HighLabel" type="Label" parent="Currency"]
+offset_left = 6.0
+offset_top = 64.0
+offset_right = 150.0
+offset_bottom = 88.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 9
+autowrap_mode = 0
+text = "TERTINGGI  0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+offset_left = 22.0
+offset_top = 138.0
+offset_right = 258.0
+offset_bottom = 342.0
+theme_override_constants/separation = 8
+
+[node name="PlayButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(236, 48)
+theme_type_variation = &"BtnGold"
+text = "PLAY"
+
+[node name="PlayIcon" type="TextureRect" parent="Menu/PlayButton"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("10_play")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ChangeButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(236, 44)
+theme_type_variation = &"BtnStone"
+text = "CHANGE DRAGON"
+
+[node name="CoinIcon" type="TextureRect" parent="Menu/ChangeButton"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 36.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("8_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(236, 44)
+theme_type_variation = &"BtnStone"
+text = "SETTING"
+
+[node name="GearIcon" type="TextureRect" parent="Menu/SettingButton"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 36.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("11_gear")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExitButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(236, 44)
+theme_type_variation = &"BtnLava"
+text = "EXIT"
+
+[node name="ExitIcon" type="TextureRect" parent="Menu/ExitButton"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 36.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("12_exit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExitDialog" type="ConfirmationDialog" parent="."]
+title = "Keluar"
+dialog_text = "Keluar dari DRAGON FLY?"
+ok_button_text = "KELUAR"
+cancel_button_text = "BATAL"

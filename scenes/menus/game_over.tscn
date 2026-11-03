@@ -1,0 +1,270 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_go"]
+[ext_resource type="Theme" path="res://resources/config/ui_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_frame_dialog.png" id="3_panel"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_icon_score.png" id="4_score"]
+[ext_resource type="Texture2D" path="res://assets/items/item_coin.png" id="5_coin"]
+[ext_resource type="Texture2D" path="res://assets/items/item_gem.png" id="6_gem"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_retry.png" id="7_retry"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_home.png" id="8_home"]
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_go")
+
+[node name="Root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="Panel" type="NinePatchRect" parent="Root"]
+offset_left = 140.0
+offset_top = 22.0
+offset_right = 500.0
+offset_bottom = 338.0
+mouse_filter = 2
+texture = ExtResource("3_panel")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Title" type="Label" parent="Root"]
+offset_left = 140.0
+offset_top = 34.0
+offset_right = 500.0
+offset_bottom = 68.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="Root"]
+offset_left = 160.0
+offset_top = 36.0
+offset_right = 186.0
+offset_bottom = 62.0
+mouse_filter = 2
+texture = ExtResource("5_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GemIcon" type="TextureRect" parent="Root"]
+offset_left = 454.0
+offset_top = 36.0
+offset_right = 480.0
+offset_bottom = 62.0
+mouse_filter = 2
+texture = ExtResource("6_gem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScoreIcon" type="TextureRect" parent="Root"]
+offset_left = 196.0
+offset_top = 76.0
+offset_right = 224.0
+offset_bottom = 104.0
+mouse_filter = 2
+texture = ExtResource("4_score")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScoreLabel" type="Label" parent="Root"]
+offset_left = 232.0
+offset_top = 76.0
+offset_right = 444.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="Root"]
+offset_left = 183.0
+offset_top = 110.0
+offset_right = 457.0
+offset_bottom = 200.0
+mouse_filter = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="ObstaclesLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Rintangan Dilewati"
+vertical_alignment = 1
+
+[node name="ObstaclesColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ObstaclesValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Poin Didapat"
+vertical_alignment = 1
+
+[node name="PointsColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BonusLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Bonus"
+vertical_alignment = 1
+
+[node name="BonusColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BonusValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CoinsLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Koin Didapat"
+vertical_alignment = 1
+
+[node name="CoinsColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinsValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GemsLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Gem Didapat"
+vertical_alignment = 1
+
+[node name="GemsColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GemsValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(186, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Skor Tertinggi"
+vertical_alignment = 1
+
+[node name="HighScoreColon" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(10, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreValue" type="Label" parent="Root/Stats"]
+custom_minimum_size = Vector2(66, 0)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Root"]
+offset_left = 226.0
+offset_top = 212.0
+offset_right = 414.0
+offset_bottom = 260.0
+theme_type_variation = &"BtnLava"
+text = "RETRY"
+
+[node name="Icon" type="TextureRect" parent="Root/RetryButton"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("7_retry")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HomeButton" type="Button" parent="Root"]
+offset_left = 226.0
+offset_top = 268.0
+offset_right = 414.0
+offset_bottom = 316.0
+theme_type_variation = &"BtnStone"
+text = "HOME"
+
+[node name="Icon" type="TextureRect" parent="Root/HomeButton"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("8_home")
+expand_mode = 1
+stretch_mode = 5

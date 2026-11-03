@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DragonCatalog" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://resources/dragons/dragon_catalog.gd" id="1_script"]
+[ext_resource type="Resource" path="res://resources/dragons/ember_hatchling.tres" id="2_d1"]
+[ext_resource type="Resource" path="res://resources/dragons/cinder_wing.tres" id="3_d2"]
+[ext_resource type="Resource" path="res://resources/dragons/ashfang.tres" id="4_d3"]
+[ext_resource type="Resource" path="res://resources/dragons/magma_claw.tres" id="5_d4"]
+[ext_resource type="Resource" path="res://resources/dragons/inferno_drake.tres" id="6_d5"]
+[ext_resource type="Resource" path="res://resources/dragons/azure_flame.tres" id="7_d6"]
+[ext_resource type="Resource" path="res://resources/dragons/obsidian_king.tres" id="8_d7"]
+[ext_resource type="Resource" path="res://resources/dragons/eclipse.tres" id="9_d8"]
+
+[resource]
+script = ExtResource("1_script")
+dragons = Array[DragonData]([ExtResource("2_d1"), ExtResource("3_d2"), ExtResource("4_d3"), ExtResource("5_d4"), ExtResource("6_d5"), ExtResource("7_d6"), ExtResource("8_d7"), ExtResource("9_d8")])

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MapConfig" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://resources/maps/map_config.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_sky_sunset_full.png" id="2_sky"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_mountain_far.png" id="3_far"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_ruins_mid.png" id="4_mid"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_ground_rock.png" id="5_ground"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/bg_ember.png" id="6_overlay"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"ember_sunset"
+display_name = "Ember Sunset"
+sky_background = ExtResource("2_sky")
+far_layer = ExtResource("3_far")
+mid_layer = ExtResource("4_mid")
+ground_layer = ExtResource("5_ground")
+overlay_layer = ExtResource("6_overlay")
+far_y = 176.0
+mid_y = 224.0
+ground_y = 296.0
+overlay_y = 250.0
+parallax_factors = Array[float]([0.05, 0.25, 0.5, 1.0, 1.4])
+obstacle_types = Array[StringName]([&"pillar", &"floating"])
+bird_enabled = true
+bird_count = 2
+tint = Color(1, 0.92, 0.82, 1)

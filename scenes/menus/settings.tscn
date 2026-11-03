@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings.gd" id="1_set"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/runner_background.tscn" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_frame_dialog.png" id="3_panel"]
+[ext_resource type="Theme" path="res://resources/config/ui_theme.tres" id="4_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/icon_home.png" id="5_home"]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_set")
+theme = ExtResource("4_theme")
+
+[node name="Background" parent="." instance=ExtResource("2_bg")]
+
+[node name="Dim" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Backdrop" type="NinePatchRect" parent="."]
+offset_left = 110.0
+offset_top = 24.0
+offset_right = 530.0
+offset_bottom = 336.0
+mouse_filter = 2
+texture = ExtResource("3_panel")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Panel" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Panel"]
+offset_left = 110.0
+offset_top = 42.0
+offset_right = 530.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+text = "SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="Panel"]
+offset_left = 160.0
+offset_top = 92.0
+offset_right = 480.0
+offset_bottom = 112.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Volume Musik"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Panel"]
+offset_left = 160.0
+offset_top = 116.0
+offset_right = 480.0
+offset_bottom = 140.0
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="SfxLabel" type="Label" parent="Panel"]
+offset_left = 160.0
+offset_top = 148.0
+offset_right = 480.0
+offset_bottom = 168.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Volume Efek Suara"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Panel"]
+offset_left = 160.0
+offset_top = 172.0
+offset_right = 480.0
+offset_bottom = 196.0
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="MuteCheck" type="CheckBox" parent="Panel"]
+offset_left = 160.0
+offset_top = 204.0
+offset_right = 340.0
+offset_bottom = 230.0
+text = "Mute"
+
+[node name="FullscreenCheck" type="CheckBox" parent="Panel"]
+offset_left = 160.0
+offset_top = 232.0
+offset_right = 400.0
+offset_bottom = 258.0
+text = "Fullscreen (desktop)"
+
+[node name="BackButton" type="Button" parent="Panel"]
+offset_left = 226.0
+offset_top = 280.0
+offset_right = 414.0
+offset_bottom = 328.0
+theme_type_variation = &"BtnStone"
+text = "KEMBALI"
+
+[node name="Icon" type="TextureRect" parent="Panel/BackButton"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("5_home")
+expand_mode = 1
+stretch_mode = 5

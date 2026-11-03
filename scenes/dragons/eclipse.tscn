@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dhvskerls406w"]
+
+[ext_resource type="Script" uid="uid://8w1vqnyu4dev" path="res://scripts/dragons/dragon_visual.gd" id="1_dv"]
+[ext_resource type="Texture2D" uid="uid://bhjedj8horiuq" path="res://assets/characters/dragon_eclipse_fly.png" id="3_dsm43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm5er"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3fmd"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m4me"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0k7x"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1oj2"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwe17"]
+atlas = ExtResource("3_dsm43")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlau2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm5er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3fmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0k7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1oj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwe17")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 9.0
+}]
+
+[node name="Eclipse" type="Node2D" unique_id=1134576933]
+script = ExtResource("1_dv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2047650314]
+sprite_frames = SubResource("SpriteFrames_wlau2")
+animation = &"fly"
+autoplay = "fly"

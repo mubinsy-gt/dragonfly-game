@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/obstacle.gd" id="1_obs"]
+[ext_resource type="Texture2D" path="res://assets/obstacles/obstacle_pillar_mid.png" id="2_body"]
+[ext_resource type="Texture2D" path="res://assets/obstacles/obstacle_pillar_top.png" id="3_cap"]
+
+[sub_resource type="RectangleShape2D" id="Rect_box"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="Rect_pass"]
+size = Vector2(8, 100)
+
+[node name="PillarObstacle" type="Node2D"]
+script = ExtResource("1_obs")
+mode = 0
+width = 64.0
+cap_size = 64.0
+
+[node name="Top" type="Node2D" parent="."]
+
+[node name="Body" type="TextureRect" parent="Top"]
+texture_repeat = 2
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_body")
+stretch_mode = 1
+
+[node name="Cap" type="Sprite2D" parent="Top"]
+texture = ExtResource("3_cap")
+flip_v = true
+
+[node name="Hit" type="Area2D" parent="Top"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Top/Hit"]
+shape = SubResource("Rect_box")
+
+[node name="Bottom" type="Node2D" parent="."]
+
+[node name="Cap" type="Sprite2D" parent="Bottom"]
+texture = ExtResource("3_cap")
+
+[node name="Body" type="TextureRect" parent="Bottom"]
+texture_repeat = 2
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_body")
+stretch_mode = 1
+
+[node name="Hit" type="Area2D" parent="Bottom"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Bottom/Hit"]
+shape = SubResource("Rect_box")
+
+[node name="PassArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape2D" parent="PassArea"]
+shape = SubResource("Rect_pass")

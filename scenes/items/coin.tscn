@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://d217kuhge4145"]
+
+[ext_resource type="Script" uid="uid://c3es3426713rp" path="res://scripts/items/collectible.gd" id="1_col"]
+[ext_resource type="Texture2D" uid="uid://bw5via06wxahv" path="res://assets/items/item_coin_spin.png" id="2_byeky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t11da"]
+atlas = ExtResource("2_byeky")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e764u"]
+atlas = ExtResource("2_byeky")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weiq1"]
+atlas = ExtResource("2_byeky")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cp4d"]
+atlas = ExtResource("2_byeky")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b82bw"]
+atlas = ExtResource("2_byeky")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6stmk"]
+atlas = ExtResource("2_byeky")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmt6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t11da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e764u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weiq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cp4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b82bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6stmk")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="C_col"]
+radius = 14.0
+
+[node name="Coin" type="Area2D" unique_id=496912578]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_col")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=637197842]
+sprite_frames = SubResource("SpriteFrames_rmt6i")
+animation = &"spin"
+autoplay = "spin"
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=360887019]
+shape = SubResource("C_col")

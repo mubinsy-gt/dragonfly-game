@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/splash.gd" id="1_sp"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_logo_emblem.png" id="2_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/ui_logo_wordmark.png" id="3_logo"]
+[ext_resource type="Theme" path="res://resources/config/ui_theme.tres" id="4_theme"]
+
+[node name="Splash" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_sp")
+theme = ExtResource("4_theme")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.06, 0.03, 0.1, 1)
+
+[node name="Logo" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 40.0
+offset_right = 352.0
+offset_bottom = 104.0
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoWord" type="TextureRect" parent="."]
+offset_left = 170.0
+offset_top = 110.0
+offset_right = 470.0
+offset_bottom = 204.0
+mouse_filter = 2
+texture = ExtResource("3_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sub" type="Label" parent="."]
+offset_top = 226.0
+offset_right = 640.0
+offset_bottom = 246.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 10
+text = "Tap / Spasi untuk mulai"
+horizontal_alignment = 1
+
+[node name="Credit" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 330.0
+offset_right = 640.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 8
+text = "Godot 4 - Pixel Art Adventure"
+horizontal_alignment = 1

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/player.gd" id="1_pl"]
+
+[sub_resource type="CircleShape2D" id="C_hurt"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="C_mag"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_pl")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+
+[node name="Shape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("C_hurt")
+
+[node name="Magnet" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Shape" type="CollisionShape2D" parent="Magnet"]
+shape = SubResource("C_mag")

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c4sx8pp01hdlg"]
+
+[ext_resource type="Script" uid="uid://8w1vqnyu4dev" path="res://scripts/dragons/dragon_visual.gd" id="1_dv"]
+[ext_resource type="Texture2D" uid="uid://b332dv1e2r0cu" path="res://assets/characters/dragon_inferno_drake_fly.png" id="3_eynvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdr6x"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ammi"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14tqy"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pouu3"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfsm8"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5sue"]
+atlas = ExtResource("3_eynvs")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ams74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdr6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ammi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14tqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pouu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfsm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5sue")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 9.0
+}]
+
+[node name="InfernoDrake" type="Node2D" unique_id=375228320]
+script = ExtResource("1_dv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1315089218]
+sprite_frames = SubResource("SpriteFrames_ams74")
+animation = &"fly"
+autoplay = "fly"

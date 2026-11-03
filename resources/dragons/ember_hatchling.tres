@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DragonData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://resources/dragons/dragon_data.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/dragons/ember_hatchling.tscn" id="2_scene"]
+[ext_resource type="Texture2D" path="res://assets/characters/dragon_ember_hatchling.png" id="3_icon"]
+[resource]
+script = ExtResource("1_script")
+id = &"ember_hatchling"
+display_name = "Ember Hatchling"
+description = "Naga pertama, ramah dan mudah dikendalikan. Cocok untuk pemula."
+price = 0
+currency = "coin"
+point_bonus = 0.0
+magnet_radius = 32.0
+shields = 0
+scene = ExtResource("2_scene")
+icon = ExtResource("3_icon")
